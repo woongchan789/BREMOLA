@@ -10,11 +10,48 @@ IQA는 제가 학부생을 졸업하는 시점에 드디어 한 번도 써보지
 
 WHAT IS IQA?
 ---
-이미지의 품질을 정량화하려는 영역입니다. 이미지들이 뿌옇거나 살짝 회전이 되있다던지 그러한 이미지들을
-인간의 시각 시스템(Human Visual System, 이하 HVS)에 의한 평가에서 벗어나 알고리즘, ML, DL에 의해 점수를 산정하려는 노력입니다.
+이미지의 품질을 정량화하려는 영역입니다. 이미지들이 뿌옇거나 살짝 회전이 되있다던지 그러한 이미지들을  
+인간의 시각 시스템(Human Visual System, 이하 HVS)에 의한 평가에서 벗어나 알고리즘, ML, DL에 의해 점수를 산정하려는 노력입니다.  
 대표적으로 PSNR, SSIM, BRISQUE가 존재하는데 최근엔 CNN이나 딥러닝 모델을 활용한 IQA 모델들이 많이 등장하고 있습니다.
 
 BREFOLA
 ---
-BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약자로.. 예.. 제가 논문에서 제안한 IQA 모델입니다.
-이미지 픽셀 밝기값의 변화를 파형으로 보는 즉, 주파수 영역대로 변환하여 
+BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약자로.. 예.. 제가 논문에서 제안한 IQA 모델입니다.  
+크게 Fourier transform과 Laplacian filter를 적용한 NR(No-Reference)방식입니다([FR, NR에 대한 설명](https://bskyvision.com/entry/IQA-CNN-%EA%B8%B0%EB%B0%98-%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%92%88%EC%A7%88%ED%8F%89%EA%B0%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC)).  
+제가 제안한 BREFOLA는 기존 IQA의 영역에서의 다양한 왜곡의 형태(압축, blur, rotation, white noise, ...)에 적용이 가능한 모델은 아니며  
+blur 왜곡에만 적용이 가능하며 또한 주행환경에서 적합한 즉, 적용도가 낮은 모델입니다.  
+본 논문이 자율주행자동차의 카메라 센서 신뢰성 향상을 목적으로 연구가 진행이 되었기에 blur만을 왜곡현상으로 보았고  
+주행환경에서 발생한 문제점을 해결하고자 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.
+
+
+Fourier Transform
+---
+제가 제안한 BREFOLA는 먼저 이미지 픽셀 밝기값의 변화를 파형으로 보고 Fourier transform을 통해 주파수 영역대로 변환합니다.  
+이 행위 자체가 의미하는 바는 픽셀의 변화가 적은 배경부분과 픽셀의 변화가 큰 edge 부분을 각각 저주파와 고주파 성분으로 보겠다는 의미이며
+실제로 이미지의 blur의 강도를 높일수록 저주파 성분이 많아지고 고주파 성분이 줄어듦을 확인하였습니다.  
+Fourier Transform을 통해 저주파 성분이 많아지고 고주파 성분이 줄어듦을 확인하였기에 이를 정량화하고자  
+Fourier Transform > Log Transform > Shifted spectrum 을 통해 분포를 2D Image로 나타내었습니다.  
+Shifted spectrum 이미지 내에 threshold를 설정해 그 이상인 픽셀 값들의 개수를 count함으로써 정량화하였습니다.
+
+Problems
+---
+Fourier Transform을 통해 blur 강도를 높일수록 정량화한 value가 작아지는 경향을 우선 catch할 수 있었으나 문제점이 존재했습니다.  
+밤에 고속도로를 타보신 경험이 있을까요? 하늘은 깜깜하고.. 상향등만 도로를 비추는..  
+그런 이미지의 경우 카메라 센서가 고장난 것이 아니라 단지 밤이라는 어두운 조도에 의한 이미지이나 푸리에 변환을 하게되면  
+깜깜한 하늘이 대부분을 차지하는 이미지의 경우 픽셀 변화가 거의 없어 저주파 성분이 엄청 많아지게 됩니다.  
+또한 주행환경에 있어 표지판, 신호등 등 주행하는데 있어 몇 가지의 중요한 요소는 존재하나  
+나무나 건물을 장식하는 조명 즉, 일루미네이션 등이나 창문이 엄청많은 건물 등이 이미지에 존재하게 되면  
+고주파 성분이 너무 많아지게 되어 정상 카메라 센서로 찍힌 이미지들에도 불구하고 차이가 너무 커지게 됩니다.
+
+Laplacian filter
+---
+위의 문제점을 해결하기위해 불필요한 고주파 성분을 어느정도 배제하고자  
+Fourier Transform에서 정량화하였던 value에 고주파 성분의 양을 나눠줌으로써 해결하고자 하였습니다.  
+고주파 성분을 효과적으로 정량화하기위해 HPF(High-Pass Filter)와 convolution을 진행했습니다.  
+Laplacian filter, Canny filter, Prewitt filter 등 다양한 HPF와 convolution을 하여 실험을 해본결과  
+고주파 성분을 잘 정량화할 수 있는 filter는 Laplacian filter였기에 원본 이미지와 Laplacian filter를  
+convolution한 edge 그림을 활용하여 정량화하고자 하였습니다.
+
+FORMULA
+---
+
