@@ -22,7 +22,9 @@ BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약
 blur 왜곡에만 적용이 가능하며 또한 주행환경에서 적합한 즉, 적용도가 낮은 모델입니다.  
 본 논문이 자율주행자동차의 카메라 센서 신뢰성 향상을 목적으로 연구가 진행이 되었기에 blur만을 왜곡현상으로 보았고  
 주행환경에서 발생한 문제점을 해결하고자 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
-![BREFOLA](./BREFOLA Architecture.png)
+
+
+![BREFOLA Architecture](https://user-images.githubusercontent.com/75806377/216616958-7fb316c1-5d6f-4359-a00b-c7498ed4a82e.png)
 
 Fourier Transform
 ---
@@ -50,8 +52,13 @@ Fourier Transform에서 정량화하였던 value에 고주파 성분의 양을 �
 고주파 성분을 효과적으로 정량화하기위해 HPF(High-Pass Filter)와 convolution을 진행했습니다.  
 Laplacian filter, Canny filter, Prewitt filter 등 다양한 HPF와 convolution을 하여 실험을 해본결과  
 고주파 성분을 잘 정량화할 수 있는 filter는 Laplacian filter였기에 원본 이미지와 Laplacian filter를  
-convolution한 edge 그림을 활용하여 정량화하고자 하였습니다.
+convolution한 edge 그림을 활용하여 정량화하고자 하였습니다.  
+도출된 edge 그림 내의 픽셀값들을 모두 더하여 정량화한 후 Fourier Transform에서 정의한 value와 단위가 맞지 않기에  
+scaling작업으로 edge 그림 내의 픽셀값들을 모두 더한 값에 제곱근을 씌워 BREFOLA로 정의하였습니다.  
 
-FORMULA
+Limitations
 ---
+IQA영역에서 한 가지 왜곡(blurry)에만 국한된 적용도가 낮은 모델이며 주행환경이라는 특수한 상황을 바탕으로  
+연구가 진행되었기에 주행이미지에만 검증작업을 진행하였으며 피사체가 강아지, 사람인 이미지의 경우에는 다소 부적합합니다.  
+IQA영역의 다양한 왜곡에도 적용이 가능하며 다양한 이미지에 적용할 수 있도록 발전시켜 HVS를 따라갈 수 있도록 노력하겠습니다.
 
