@@ -21,8 +21,8 @@ BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약
 제가 제안한 BREFOLA는 기존 IQA의 영역에서의 다양한 왜곡의 형태(압축, blur, rotation, white noise, ...)에 적용이 가능한 모델은 아니며  
 blur 왜곡에만 적용이 가능하며 또한 주행환경에서 적합한 즉, 적용도가 낮은 모델입니다.  
 본 논문이 자율주행자동차의 카메라 센서 신뢰성 향상을 목적으로 연구가 진행이 되었기에 blur만을 왜곡현상으로 보았고  
-주행환경에서 발생한 문제점을 해결하고자 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.
-
+주행환경에서 발생한 문제점을 해결하고자 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
+![BREFOLA](./BREFOLA Architecture.png)
 
 Fourier Transform
 ---
