@@ -11,17 +11,21 @@ IQA는 제가 학부생을 졸업하는 시점에 드디어 한 번도 써보지
 WHAT IS IQA?
 ---
 이미지의 품질을 정량화하려는 영역입니다. 이미지들이 뿌옇거나 살짝 회전이 되있다던지 그러한 이미지들을  
-인간의 시각 시스템(Human Visual System, 이하 HVS)에 의한 평가에서 벗어나 알고리즘, ML, DL에 의해 점수를 산정하려는 노력입니다.  
-대표적으로 PSNR, SSIM, BRISQUE가 존재하는데 최근엔 CNN이나 딥러닝 모델을 활용한 IQA 모델들이 많이 등장하고 있습니다.
+인간의 시각 시스템(Human Visual System, 이하 HVS)에 의한 평가에서 벗어나
+알고리즘, ML, DL에 의해 점수를 산정하려는 노력입니다.  
+대표적으로 PSNR, SSIM, BRISQUE가 존재하는데 최근엔 CNN이나 딥러닝 모델을
+활용한 IQA 모델들이 많이 등장하고 있습니다.
 
 BREFOLA
 ---
-BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약자로.. 예.. 제가 논문에서 제안한 IQA 모델입니다.  
+BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약자로.. 
+예.. 제가 논문에서 제안한 IQA 모델입니다.  
 크게 Fourier transform과 Laplacian filter를 적용한 NR(No-Reference)방식입니다([FR, NR에 대한 설명](https://bskyvision.com/entry/IQA-CNN-%EA%B8%B0%EB%B0%98-%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%92%88%EC%A7%88%ED%8F%89%EA%B0%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC)).  
-제가 제안한 BREFOLA는 기존 IQA의 영역에서의 다양한 왜곡의 형태(압축, blur, rotation, white noise, ...)에 적용이 가능한 모델은 아니며  
-blur 왜곡에만 적용이 가능하며 또한 주행환경에서 적합한 즉, 적용도가 낮은 모델입니다.  
-본 논문이 자율주행자동차의 카메라 센서 신뢰성 향상을 목적으로 연구가 진행이 되었기에 blur만을 왜곡현상으로 보았고  
-주행환경에서 발생한 문제점을 해결하고자 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
+제가 제안한 BREFOLA는 기존 IQA의 영역에서의 다양한 왜곡의 형태(압축, blur, white noise, ...)에
+적용이 가능한 모델은 아니며 blur 왜곡에만 적용이 가능하고 주행환경에서 적합한 즉, 적용도가 낮은 모델입니다.  
+본 논문이 자율주행자동차의 카메라 센서 신뢰성 향상을 목적으로 연구가 진행이 되었기에
+blur만을 왜곡현상으로 보았고 주행환경에서 발생한 문제점을 해결하고자
+Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
 
 
 ![BREFOLA Architecture](https://user-images.githubusercontent.com/75806377/216616958-7fb316c1-5d6f-4359-a00b-c7498ed4a82e.png)
