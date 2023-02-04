@@ -29,7 +29,7 @@ blur만을 왜곡현상으로 보았고 주행환경에서 발생한 문제점�
 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
 
 
-![그림1](https://user-images.githubusercontent.com/75806377/216756119-a026421b-1c9e-4092-b4c3-36d5007e81a8.png)
+![1](https://user-images.githubusercontent.com/75806377/216756264-706b7d18-4f03-47f6-a424-06d1fa59cf2d.png)
 
 Fourier Transform
 ---
@@ -56,10 +56,10 @@ Fourier Transform을 통해 blur 강도를 높일수록 정량화한 value가
 
 - 낮 시간대, 조명 장식이 많은 즉, 이미지 복잡도가 높은 이미지  
 
-![1](https://user-images.githubusercontent.com/75806377/216619152-bb5c397b-5d22-4921-a5eb-103ea7b505c9.png)  
+![2](https://user-images.githubusercontent.com/75806377/216619152-bb5c397b-5d22-4921-a5eb-103ea7b505c9.png)  
 - 밤 시간대, 요소가 거의 없는 즉, 이미지 복잡도가 낮은 이미지  
 
-![2](https://user-images.githubusercontent.com/75806377/216619156-0a14eb03-eff6-4ef0-b889-afb646885150.png)  
+![3](https://user-images.githubusercontent.com/75806377/216619156-0a14eb03-eff6-4ef0-b889-afb646885150.png)  
 
 Laplacian filter
 ---
@@ -73,7 +73,7 @@ edge 그림 내의 픽셀값들을 모두 더하여 정량화한 후 Fourier Tra
 scaling작업으로 edge 그림 내의 픽셀값들을 모두 더한 값에 제곱근을 씌워 BREFOLA로 정의하였습니다.  
 
 
-![3](https://user-images.githubusercontent.com/75806377/216619159-65b6c607-0bf6-48e0-87cf-39dec37b667f.png)
+![4](https://user-images.githubusercontent.com/75806377/216619159-65b6c607-0bf6-48e0-87cf-39dec37b667f.png)
 
 Results
 ---
@@ -87,7 +87,7 @@ BREFOLA를 적용한 후 확실히 줄어든 것을 확인할 수 있습니다.
 정상 카메라로 찍은 깜깜한 고속도로 이미지를 구별할 수 있음을 의미합니다!
 
 
-![그림2](https://user-images.githubusercontent.com/75806377/216756121-e2163a88-7376-4706-a0a4-941d93095018.png)
+![5](https://user-images.githubusercontent.com/75806377/216756267-ce75ec69-3265-49d5-844a-2eaaab46a55c.png)
 
 Limitations
 ---
