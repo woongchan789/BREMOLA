@@ -12,7 +12,7 @@ WHAT IS IQA?
 ---
 이미지의 품질을 정량화하려는 영역입니다. 이미지들이 뿌옇거나 살짝 회전이 되있다던지  
 그러한 이미지들을 인간의 시각 시스템(Human Visual System, 이하 HVS)에 의한 평가에서 벗어나  
-알고리즘, ML, DL에 의해 점수를 산정하려는 노력입니다.  
+통계적 특성이나 알고리즘에 의해 정량화하려는 노력입니다.  
 
 대표적으로 PSNR, SSIM, BRISQUE가 존재하는데 최근엔 CNN이나 딥러닝 모델을  
 활용한 IQA 모델들이 많이 등장하고 있습니다.
@@ -26,7 +26,7 @@ BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약
 적용이 가능한 모델은 아니며 blur 왜곡에만 적용이 가능하고 주행환경에서 적합한 즉, 적용도가 낮은 모델입니다.  
 본 논문이 자율주행자동차의 카메라 센서 신뢰성 향상을 목적으로 연구가 진행이 되었기에  
 blur만을 왜곡현상으로 보았고 주행환경에서 발생한 문제점을 해결하고자  
-Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
+Laplacian filter을 사용하였기에 아직까지도 많은 부분이 부족한 지표입니다.  
 
 
 ![1](https://user-images.githubusercontent.com/75806377/216756264-706b7d18-4f03-47f6-a424-06d1fa59cf2d.png)
