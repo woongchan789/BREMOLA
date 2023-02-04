@@ -29,7 +29,7 @@ blur만을 왜곡현상으로 보았고 주행환경에서 발생한 문제점�
 Laplacian filter을 사용하였기에 아직 많은 부분이 부족한 지표입니다.  
 
 
-![BREFOLA Architecture](https://user-images.githubusercontent.com/75806377/216616958-7fb316c1-5d6f-4359-a00b-c7498ed4a82e.png)
+![그림1](https://user-images.githubusercontent.com/75806377/216756119-a026421b-1c9e-4092-b4c3-36d5007e81a8.png)
 
 Fourier Transform
 ---
@@ -87,7 +87,7 @@ BREFOLA를 적용한 후 확실히 줄어든 것을 확인할 수 있습니다.
 정상 카메라로 찍은 깜깜한 고속도로 이미지를 구별할 수 있음을 의미합니다!
 
 
-![4](https://user-images.githubusercontent.com/75806377/216619163-dc0f4120-937c-49e5-88f4-ae21c91e8842.png)
+![그림2](https://user-images.githubusercontent.com/75806377/216756121-e2163a88-7376-4706-a0a4-941d93095018.png)
 
 Limitations
 ---
