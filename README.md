@@ -1,6 +1,6 @@
 # Image Quality Assessment
 
-LAST MODIFIED: 2023.02.03
+Last modified: 2023.02.03
 
 Intro
 ---
