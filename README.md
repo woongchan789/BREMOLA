@@ -19,7 +19,7 @@ WHAT IS IQA?
 
 BREFOLA
 ---
-BREFOLA는 Blind/Referenceless via Fourier transform and Laplacian filter의 약자로..  
+BREFOLA는 Blind/Referenceless model via Fourier transform and Laplacian filter의 약자로..  
 예.. 제가 논문에서 제안한 IQA 모델입니다.  
 크게 Fourier transform과 Laplacian filter를 적용한 NR(No-Reference)방식입니다([FR, NR에 대한 설명](https://bskyvision.com/entry/IQA-CNN-%EA%B8%B0%EB%B0%98-%EC%9D%B4%EB%AF%B8%EC%A7%80%ED%92%88%EC%A7%88%ED%8F%89%EA%B0%80-%EC%95%8C%EA%B3%A0%EB%A6%AC%EC%A6%98-%EC%A0%95%EB%A6%AC)).  
 제가 제안한 BREFOLA는 기존 IQA의 영역에서의 다양한 왜곡의 형태(압축, blur, white noise, ...)에  
