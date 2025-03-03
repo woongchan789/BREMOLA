@@ -21,13 +21,13 @@ values = white_area.sum()
 canny_edge = cv2.Laplacian(resized_img, cv2.CV_8U,ksize=3)
 ic = canny_edge.sum()
 
-brefola = values / np.sqrt(ic) / 5 # Scaling to have values between 0 and 100
+bremola = values / np.sqrt(ic) / 5 # Scaling to have values between 0 and 100
 
-if brefola > 100:
-    brefola = 100
-elif brefola < 0:
-    brefola = 0
+if bremola > 100:
+    bremola = 100
+elif bremola < 0:
+    bremola = 0
 
-print('BREFOLA: {}'.format(brefola))
+print('bremola: {}'.format(bremola))
     
 
