@@ -17,6 +17,9 @@ This repository provides the implementation of **BREMOLA** (Blind/Referenceless 
 - **Robust to Driving Conditions**: Tested on images from diverse locations (Dubai, Los Angeles, San Francisco, Seoul).
 
 ## 📊 Experimental Results
+<img width="1275" alt="image" src="https://github.com/user-attachments/assets/148a4db9-c900-4b73-8adb-e22da72a86f6" />
+<img width="1542" alt="image" src="https://github.com/user-attachments/assets/2fe214fb-de35-4b84-8867-cc80fcb60de8" />
+
 BREMOLA demonstrates **higher reliability and accuracy** in detecting blur degradation compared to traditional IQA metrics such as:
 - **PSNR (Peak Signal-to-Noise Ratio)**
 - **SSIM (Structural Similarity Index)**
@@ -49,9 +52,6 @@ For privacy reasons, we do not provide the dataset here, but you can use publicl
 - Extending BREMOLA to **handle other distortions** (e.g., noise, motion blur).
 - Improving real-time performance for **embedded systems**.
 - Exploring deep-learning-based approaches for further enhancement.
-
-## 📜 License
-This project is released under the **MIT License**. See [`LICENSE`](LICENSE) for details.
 
 ## 📝 Citation
 If you find this work useful, please cite:
