@@ -6,7 +6,7 @@ This repository provides the implementation of **BREMOLA** (Blind/Referenceless 
 ## 📰 Paper
 - **Title**: No-Reference Image Quality Assessment with Moving Spectrum and Laplacian Filter for Autonomous Driving Environment
 - **Authors**: Woongchan Nam, Taehyun Youn, Chunghun Ha
-- **Published in**: *Vehicles* (MDPI, 2025)
+- **Published in**: *Vehicles*
 - **DOI**: [10.3390/vehicles7010008](https://doi.org/10.3390/vehicles7010008)
 
 ## 🏆 Key Features
