@@ -18,8 +18,16 @@ This repository provides the implementation of **BREMOLA** (Blind/Referenceless 
 
 ## 📊 Experimental Results
 <img width="1275" alt="image" src="https://github.com/user-attachments/assets/148a4db9-c900-4b73-8adb-e22da72a86f6" />
+
+### **Comparison Before and After Applying BREMOLA**  
+**Before applying BREMOLA**, NR-IQA methods based on moving spectrum analysis showed **high variability in quality metric values due to environmental factors (lighting, number of objects, etc.)**, especially for **low blur levels (1×1 to 5×5 filters)**. In particular, **overlapping metric values between 1×1 (original) and 3×3 (mild blur) made it difficult to distinguish normal and degraded conditions**. However, **after applying BREMOLA, the Laplacian filter was used to compensate for image complexity**, reducing variance in quality metrics and **providing a more consistent decrease in values as blur increased**, making it easier to identify degraded images.  
+
 <img width="1542" alt="image" src="https://github.com/user-attachments/assets/2fe214fb-de35-4b84-8867-cc80fcb60de8" />
 
+### **Comparison with Traditional IQA Metrics**  
+PSNR and SSIM, as **Full-Reference IQA (FR-IQA) methods, require an original reference image**, making them unsuitable for autonomous driving. **BRISQUE, a No-Reference IQA (NR-IQA) method, was highly sensitive to environmental changes**, leading to **inconsistent quality assessments influenced more by image complexity than actual blur**. In contrast, **BREMOLA is robust to environmental variations and provides a reliable measure of blur**, making it **better suited for real-time camera sensor monitoring in autonomous driving environments**. 🚗💡
+
+---
 BREMOLA demonstrates **higher reliability and accuracy** in detecting blur degradation compared to traditional IQA metrics such as:
 - **PSNR (Peak Signal-to-Noise Ratio)**
 - **SSIM (Structural Similarity Index)**
