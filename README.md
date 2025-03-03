@@ -1,4 +1,4 @@
-# 🚗 BREMOLA: No-Reference Image Quality Assessment for Autonomous Driving
+## 🚗 BREMOLA: No-Reference Image Quality Assessment for Autonomous Driving
 
 ## 📌 Overview
 This repository provides the implementation of **BREMOLA** (Blind/Referenceless Model via Moving Spectrum and Laplacian Filter), a **No-Reference Image Quality Assessment (NR-IQA)** method tailored for **autonomous driving environments**. BREMOLA is designed to accurately assess image quality degradation, particularly **blur**, in real-time driving scenarios by leveraging a **Fourier transform-based shifted spectrum** and **Laplacian filter for edge detection**.
